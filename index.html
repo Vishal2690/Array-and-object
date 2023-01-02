@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #kk {
+            width: 400px;
+            background-color: red;
+            color: azure;
+            border-radius: 10px;
+            box-shadow: 2px 4px 8px gray;
+            text-shadow: 4px 3px gray;
+        }
+    </style>
+</head>
+
+<body >
+    <center>
+        <h1 id="kk">Arrays of Objects</h1>
+    </center>
+    <center>
+        <h1>Main Question</h1>
+        <h2>
+            <pre>
+        "let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+          {name: 'Baba', id: 101, marks : 23 },
+          {name: 'yaga', id: 200, marks : 45 },
+          {name: 'Wick', id: 115, marks : 75 } ] "
+        </pre>
+        </h2>
+    </center>
+    <p>"Question 1 : We are interested in retrieving only the name of the students and all the names should be in caps.
+
+        ['JOHN', 'BABA', 'YAGA', 'WICK']
+        "</p>
+    <h3>Ans:- </h3>
+    <pre style="color:red;">
+        let res=[];
+        for(let i=0;i< studentRecords.length; i++){
+          let obj=studentRecords[i];
+              res.push(obj.name.toUpperCase());
+        }
+        console.log(res);
+    </pre>
+    <h3>Output</h3>
+    <h4> ['JOHN', 'BABA', 'YAGA', 'WICK']</h4>
+    <hr>
+    <br>
+    <p>"Question 2: Suppose we have the same dataset as above but this time we want to get the details of students who
+        scored more than 50 marks.
+
+        [{name: 'John', id: 123, marks : 98 },{name: 'Wick', id: 115, marks : 75 }]"</p>
+    <h3>Ans:- </h3>
+    <pre style="color:red;">
+        let res=[];
+        for(let i=0; i< studentRecords.length; i++){
+          let obj=studentRecords[i];
+              res.push(obj.name.toUpperCase());
+        }
+        console.log(res);
+
+    </pre>
+    <h3>Output</h3>
+    <h4> [{name: 'John', id: 123, marks : 98 },{name: 'Wick', id: 115, marks : 75 }]</h4>
+    <hr>
+    <br>
+    <p>Question 3: Retrieve the details of students who scored more than 50 marks and have id greater than 120.</p>
+    <h3>Ans:- </h3>
+    <pre style="color:red;">
+       let res = [];
+       for(let i=0; i< studentRecords.length; i++){
+
+           let obj=studentRecords[i];
+                if(obj.marks>50 && obj.id> 120){
+                    res.push(obj);
+                }
+       }
+       console.log(res);
+
+    </pre>
+    <h3>Output</h3>
+    <h4> [ { name: 'John', id: 123, marks: 98 } ]</h4>
+    <hr>
+    <br>
+    <p>Question 4: Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students.</p>
+    <h3>Ans:- </h3>
+    <pre style="color:red;">
+      function myRecord(studentRecords){
+        let sum=0;
+        for(let i=0;i< studentRecords.length; i++){
+            let marks=studentRecords[i].marks;
+            sum=sum+marks;
+        }
+        console.log(sum);
+      }
+      myRecord(studentRecords);
+
+    </pre>
+    <h3>Output</h3>
+    <h4> 241</h4>
+    <hr>
+    <br>
+    <p>Question 5: This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above.</p>
+    <h3>Ans:- </h3>
+    <pre style="color:red;">
+      for(let i=0; i< studentRecords.length; i++){
+        let marks = studentRecords[i].marks;
+        let name = studentRecords[i].name;
+        if(marks>50){
+            console.log(name);
+        }
+      }
+
+    </pre>
+    <h3>Output</h3>
+    <h4> [ 'John', 'Wick' ]</h4>
+    <hr>
+    <br>
+    <p> Question 6: This time we are required to print the sum of marks of the students with id > 120.</p>
+    <h3>Ans:- </h3>
+    <pre style="color:red;">
+     let add = 0;
+     for(let i = 0; i< studentRecords.length; i++){
+        let marks = studentRecords[i].marks;
+        let id = studentRecords[i].id;
+        if(id > 120){
+            add+=marks;
+        }
+     }
+     console.log(add);
+
+    </pre>
+    <h3>Output</h3>
+    <h4>143</h4>
+    <hr>
+    <br>
+    <p> Question 7: This time we are required to print the total marks of the students with marks greater than 50 after a grace of 15 marks has been added to those students who scored less than 50.</p>
+    <h3>Ans:- </h3>
+    <pre style="color:red;">
+    let add = 0; 
+    for(let i = 0; i< studentRecords.length; i++){
+        let marks = studentRecords[i].marks;
+        if(marks < 50){
+            add+=marks + 15;
+            if(add < 50){
+                console.log(add);
+            }
+        }
+    }
+
+    </pre>
+    <h3>Output</h3>
+    <h4>98</h4>
+    <hr>
+    <br>
+    <p>Create 6 objects , each object will have name, class, roll no as properties. Store these objects in an array of objects. </p>
+    <h3>Ans:- </h3>
+    <pre style="color:red;">
+        let myobj = {
+            name: 'john',
+            rollno: 02,
+            class: 'BCA'
+           };
+           let myobj2 = { 
+            name : 'Rahul',
+            rollno : 05,
+            class : 'B.com'
+           };
+           let myobj3 = { 
+            name : 'sham',
+            rollno : 10,
+            class : 'BE'
+           };
+           let myobj4 = { 
+            name : 'Krushna',
+            rollno : 1000,
+            class : 'B.Tech'
+           };
+           let myobj5 = { 
+            name : 'Ram',
+            rollno : 2000,
+            class : 'MCA'
+           };
+           let myobj6 = { 
+            name : 'Bhim',
+            rollno : 100,
+            class : 'MTech'
+           };
+           let sumOfAll = [];
+           sumOfAll = [{...myobj},{...myobj2},{...myobj3},{...myobj4},{...myobj5},{...myobj6},]
+           console.log(sumOfAll);
+
+    </pre>
+    <h3>Output</h3>
+    <h4>[
+        { name: 'john', rollno: 2, class: 'BCA' },
+        { name: 'Rahul', rollno: 5, class: 'B.com' },
+        { name: 'sham', rollno: 10, class: 'BE' },
+        { name: 'Krushna', rollno: 1000, class: 'B.Tech' },
+        { name: 'Ram', rollno: 2000, class: 'MCA' },
+        { name: 'Bhim', rollno: 100, class: 'MTech' }
+      ]</h4>
+    <hr>
+    <br>
+
+</body>
+
+</html>
